@@ -26,4 +26,6 @@ RUN mv ../CMakeLists.txt.new ../CMakeLists.txt && \
 
 FROM scratch
 COPY --from=builder /extract-xiso/build/extract-xiso /extract-iso
+WORKDIR /work
+VOLUME ["/work"]
 ENTRYPOINT ["/extract-iso"]
